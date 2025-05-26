@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Interativo com Imagem</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="h:\site\css.css">
+  <link rel="icon" type="image/png" href="c:\Users\adrielle 2\Downloads\icone.png
+  ">
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+      margin-top: 80px; /* Espaço para o cabeçalho fixo */
+    }
+    .popup-content img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .popup-content {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+   <header class="nav-menu">
+        <h1 class="esquerda">
+          <a href="introdução" style="color: white; text-decoration: none;">Vocabulário Campista</a>
+        </h1>
+        <nav>
+            <ul class="lista"> 
+                <li><a href="H:\site\inicio.html">Início</a></li>
+                <li><a href="H:\site\mapa.html">Mapa</a></li>
+                <li><a href="./vocabulario.html">Vocabulário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <div id="map"></div>
+    </main>
+
+    <footer class="footer-bottom">
+      <p>&copy; 2025 Itinerário Campista.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      // Cria o mapa centralizado em Campos dos Goytacazes
+      var map = L.map('map').setView([-21.7546, -41.3248], 12);
+
+      // Mapa base do OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Dados dos pontos turísticos
+      const pontos = [
+        {
+          nome: "Praia do Farol de São Thomé",
+          lat: -22.0145,
+          lng: -41.0511,
+          imagem: "https://upload.wikimedia.org/wikipedia/commons/4/44/Farol_de_S%C3%A3o_Thom%C3%A9.jpg",
+          descricao: "A Praia do Farol é famosa pelas suas belezas naturais, o farol histórico e eventos culturais."
+        },
+        {
+          nome: "Morro do Itaoca",
+          lat: -21.6512,
+          lng: -41.3386,
+          imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Morro_do_Itaoca.jpg",
+          descricao: "Local ideal para prática de voo livre, com vista panorâmica incrível de Campos dos Goytacazes."
+        },
+        {
+          nome: "Villa Maria",
+          lat: -21.7624,
+          lng: -41.3185,
+          imagem: "https://upload.wikimedia.org/wikipedia/commons/6/66/Villa_Maria.jpg",
+          descricao: "Um dos prédios históricos mais bonitos do centro da cidade, símbolo da arquitetura campista."
+        }
+      ];
+
+      // Adiciona os marcadores
+      pontos.forEach(ponto => {
+        const popupContent = `
+          <div class="popup-content">
+            <h3>${ponto.nome}</h3>
+            <img src="${ponto.imagem}" alt="${ponto.nome}">
+            <p>${ponto.descricao}</p>
+          </div>
+        `;
+        L.marker([ponto.lat, ponto.lng])
+          .addTo(map)
+          .bindPopup(popupContent);
+      });
+    </script>
+</body>
+</html>
