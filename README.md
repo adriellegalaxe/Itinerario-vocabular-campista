@@ -1,1 +1,0 @@
-# Itinerario-vocabular-campista
