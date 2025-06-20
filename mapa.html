@@ -1,119 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa Interativo com Imagem</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-  <link rel="stylesheet" href="css.css">
-  <link rel="icon" type="image/png" href="icone.png ">
-  <style>
-    #map {
-      height: 600px;
-      width: 100%;
-      margin-top: 80px; /* Espaço para o cabeçalho fixo */
-    }
-    .popup-content img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .popup-content {
-      text-align: center;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mapa Interativo </title>
+  <link rel="stylesheet" href="css.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" type="image/png" href="icone.png">
 </head>
 <body>
+  <header class="nav-menu">
+    <h1 >Mapa Interativo</h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./mapa.html">Mapa</a></li>
+        <li><a href="./vocabulario.html">Vocabulário</a></li>
+        <li><a href="./vocabulario2.html">Vocabulário 2</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   <header class="nav-menu">
-        <h1 class="esquerda">
-          <a href="introdução" style="color: white; text-decoration: none;">Mapa Interativo</a>
-        </h1>
-        <nav>
-            <ul class="lista"> 
-                <li><a href="index.html">Início</a></li>
-                <li><a href="mapa.html">Mapa</a></li>
-                <li><a href="vocabulario.html">Vocabulário</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div id="map"></div>
 
-    <main>
-      <div id="map"></div>
-    </main>
+  <footer class="footer-bottom">
+    &copy; 2025 - Mapa Turístico de Campos dos Goytacazes
+  </footer>
 
-    <footer class="footer-bottom">
-      <p>&copy; 2025 Itinerário Campista.</p>
-    </footer>
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-      // Cria o mapa centralizado em Campos dos Goytacazes
-      var map = L.map('map').setView([-21.7546, -41.3248], 12);
-
-      // Mapa base do OpenStreetMap
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
-
-      // Dados dos pontos turísticos
-      const pontos = [
-        {
-          nome: "Praia do Farol de São Thomé",
-          lat: -22.04356,
-          lng: -41.05020,
-          imagem: "https://s2-g1.glbimg.com/towgYpoGeLdw2Z_mLSVbwneZMZg=/0x0:1600x900/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/z/F/fC5Zi3SxC8BJIfBDPhdA/whatsapp-image-2021-12-25-at-12.13.24.jpeg",
-          descricao: "A Praia do Farol é famosa pelas suas belezas naturais, o farol histórico e eventos culturais."
-        },
-        {
-          nome: "Morro do Itaoca",
-          lat: -21.37080,
-          lng: -41.35232,
-          imagem: "https://cdn-sites-images.46graus.com/files/photos/cb80e63b/33189729-1a5e-4697-9836-04766b98ca86/panorama-morro-do-itaoca--1920x1087.jpg",
-          descricao: "Local ideal para prática de voo livre, com vista panorâmica incrível de Campos dos Goytacazes."
-        },
-        {
-          nome: "Villa Maria",
-          lat: -21.752559,
-          lng: -41.333530,
-          imagem: "https://uenf.br/reitoria/villamaria/files/2024/04/WhatsApp-Image-2024-04-29-at-08.38.08-1.jpeg",
-          descricao: "Um dos prédios históricos mais bonitos do centro da cidade, símbolo da arquitetura campista. Antigo casarão histórico restaurado, sede de eventos culturais."
-        },
-         {
-          nome: "Trianon",
-          lat: -21.762696,
-          lng: -41.319744,
-          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAr2xxHZlveshC5usRWijQ2nX6cPJSZOxeYA&s",
-          descricao: "Principal teatro da cidade, com programação cultural variada."
-        },
-        {
-          nome: "Praça São Salvador",
-          lat: -21.756338,
-          lng: -41.323668,
-          imagem: "https://s2-g1.glbimg.com/Dgtb3RnvSSziyQEOQwGQKHS4WHU=/0x0:1600x1200/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/Z/8/kWiqB3TyKIWzrCelFLXQ/whatsapp-image-2023-03-28-at-14.36.52.jpeg",
-          descricao: "Praça central de Campos, palco de manifestações e eventos culturais"
-        },
-          {
-          nome: "Academia de letras Campista",
-          lat: -21.763867,
-          lng: -41.321436,
-          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2t-XIEla7pfRsFqNVlHBt6c-1AUDyoy2JdQ&s",
-          descricao: "A Academia de Letras Campista é uma instituição dedicada à valorização da literatura, cultura e memória histórica de Campos dos Goytacazes, reunindo escritores, poetas e intelectuais comprometidos com o fortalecimento das letras e das artes."
-        } 
-      ];
-
-      // Adiciona os marcadores
-      pontos.forEach(ponto => {
-        const popupContent = `
-          <div class="popup-content">
-            <h3>${ponto.nome}</h3>
-            <img src="${ponto.imagem}" alt="${ponto.nome}">
-            <p>${ponto.descricao}</p>
-          </div>
-        `;
-        L.marker([ponto.lat, ponto.lng])
-          .addTo(map)
-          .bindPopup(popupContent);
-      });
-    </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
