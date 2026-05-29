@@ -1,103 +1,236 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introdução do Itinerário</title>
+  <title>Itinerário Vocabular Campista - Descubra Campos dos Goytacazes</title>
   <link rel="stylesheet" href="css.css" />
   <link rel="icon" type="image/png" href="icone.png">
-  <style> 
-  .intro{justify-content: center;
- color:#0906bd;}
- 
- .titulo{color:#0906bd;}
-
-body{background-color:#3299CC;}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-   <header class="nav-menu">
-            <h1 >Inicio</h1>
-            <nav>
-                <ul> 
-                   <li><a href="index.html">Inicio</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="vocabulario.html">Vocabulário</a></li>
-            
-                </ul>
-            </nav>
-        </header>
-  <br><br>
-   <main>
-     <br><br>
+
+  <!-- Header melhorado com efeito glassmorphism -->
+  <header class="nav-menu">
+    <div class="logo">
+      <i class="fas fa-map-marked-alt"></i>
+      <h1>Itinerário Campista</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="mapa.html"><i class="fas fa-map"></i> Mapa</a></li>
+        <li><a href="vocabulario.html"><i class="fas fa-book"></i> Vocabulário</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section - Banner principal -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-star-of-life"></i> Descubra a essência
+        </div>
+        <h1 class="hero-title">Itinerário Vocabular Campista</h1>
+        <p class="hero-subtitle">Explore a cultura, história e tradições da terra dos Goytacazes</p>
+        <div class="hero-buttons">
+          <a href="mapa.html" class="btn-primary"><i class="fas fa-map-marked-alt"></i> Explorar Mapa</a>
+          <a href="vocabulario.html" class="btn-secondary"><i class="fas fa-language"></i> Ver Vocabulário</a>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#f8f9fa" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,208C384,203,480,181,576,181.3C672,181,768,203,864,208C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+    </section>
+
     <div class="caixa-texto">
-    <p> <h1 class= 'intro'><center> Itinerário Vocabular Campista: Descubra a Essência de Campos dos Goytacazes </center></h1>
-        </p>
-        <BR>
-       
-     <p> <h3> Campos dos Goytacazes não é apenas uma cidade. É um território onde a tradição, a história, a cultura e a natureza se entrelaçam, formando uma identidade única e carregada de significado. Terra de gente acolhedora, trabalhadora e orgulhosa de suas raízes, Campos carrega em cada rua, cada distrito, cada palavra e cada expressão popular, um pedaço de sua própria história.
+      <!-- Introdução Principal -->
+      <div class="intro-card fade-in">
+        <h1 class="intro-title">
+          <i class="fas fa-heart" style="color: #e74c3c;"></i> 
+          Itinerário Vocabular Campista: Descubra a Essência de Campos dos Goytacazes
+        </h1>
+        <div class="intro-text">
+          <p>Campos dos Goytacazes não é apenas uma cidade. É um território onde a tradição, a história, a cultura e a natureza se entrelaçam, formando uma identidade única e carregada de significado. Terra de gente acolhedora, trabalhadora e orgulhosa de suas raízes, Campos carrega em cada rua, cada distrito, cada palavra e cada expressão popular, um pedaço de sua própria história.</p>
+          <p>O Itinerário Campista surge como uma proposta inovadora que visa muito mais do que simplesmente apresentar pontos turísticos. Nosso objetivo é oferecer uma verdadeira imersão na essência campista. Aquela que vive nas conversas de esquina, nas festas tradicionais, nas manifestações culturais e nos espaços naturais que encantam quem vive e quem visita.</p>
+          <p>Ao percorrer este site, você embarca em uma viagem que ultrapassa mapas e roteiros. Aqui, você vai descobrir que Campos dos Goytacazes é feito de memórias, de sotaques, de paisagens surpreendentes e de um povo que carrega com orgulho sua própria maneira de ser, de falar e de viver.</p>
+        </div>
+      </div>
 
-O Itinerário Campista surge como uma proposta inovadora que visa muito mais do que simplesmente apresentar pontos turísticos. Nosso objetivo é oferecer uma verdadeira imersão na essência campista. Aquela que vive nas conversas de esquina, nas festas tradicionais, nas manifestações culturais e nos espaços naturais que encantam quem vive e quem visita.
+      <!-- Cards de Cultura -->
+      <div class="cards-section">
+        <div class="info-card fade-in delay-1">
+          <div class="card-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h2>Cultura que Vive nas Palavras</h2>
+          <p>Campos dos Goytacazes é muito mais do que uma cidade... é um verdadeiro celeiro de cultura popular, tradições e saberes que atravessam gerações. Cada palavra, cada expressão típica carrega consigo um pedaço da história do nosso povo. Ao mesmo tempo, cada ponto turístico, cada monumento, cada espaço natural conta uma parte dessa narrativa.</p>
+          <p>Nosso itinerário não é apenas um mapa físico, mas também um mapa afetivo, que convida você a percorrer as ruas, as praças, as praias e os distritos, entendendo de onde vem a nossa identidade e o que nos torna, com muito orgulho, campistas.</p>
+        </div>
 
-Ao percorrer este site, você embarca em uma viagem que ultrapassa mapas e roteiros. Aqui, você vai descobrir que Campos dos Goytacazes é feito de memórias, de sotaques, de paisagens surpreendentes e de um povo que carrega com orgulho sua própria maneira de ser, de falar e de viver. </h3></p>
+        <div class="info-card fade-in delay-2">
+          <div class="card-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h2>Valorizando os Pontos Turísticos</h2>
+          <p>No projeto Itinerário, o vocabulário e os pontos turísticos da cidade de Campos dos Goytacazes foi apresentadas no objetivo de valorizar nossa cidade e a cultura dela. Na aba mapa, você pode verificar vários pontos turísticos marcados com o marcador azul que clicando aparece alguns dos pontos turísticos que temos na nossa cidade além de fotos e descrição de cada uma delas.</p>
+          <a href="mapa.html" class="card-link">Ver Mapa <i class="fas fa-arrow-right"></i></a>
+        </div>
 
-     
-     <P> <h2 class='titulo'>Cultura que Vive nas Palavras e nos Lugares </h2> 
-     
-    <h4> Campos dos Goytacazes é muito mais do que uma cidade... é um verdadeiro celeiro de cultura popular, tradições e saberes que atravessam gerações. Cada palavra, cada expressão típica carrega consigo um pedaço da história do nosso povo. Ao mesmo tempo, cada ponto turístico, cada monumento, cada espaço natural conta uma parte dessa narrativa.
+        <div class="info-card fade-in delay-3">
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h2>Educação e Cultura Local</h2>
+          <p>O desenvolvimento deste site é fruto do trabalho dos alunos da turma INF21I, do curso técnico de informática do Instituto Superior de Educação Professor Aldo Muylaert (ISEPAM), sob a orientação da professora Luciana Tavares. O projeto foi idealizado com o objetivo de unir tecnologia, educação e cultura, promovendo não só o aprendizado prático dos alunos, como também a valorização da história, da linguagem e dos patrimônios da nossa cidade.</p>
+          <p>Este é mais um exemplo de como a educação tem um papel fundamental na preservação da memória local e na construção de ferramentas que beneficiam toda a comunidade.</p>
+        </div>
+      </div>
 
-Nosso itinerário não é apenas um mapa físico, mas também um mapa afetivo, que convida você a percorrer as ruas, as praças, as praias e os distritos, entendendo de onde vem a nossa identidade e o que nos torna, com muito orgulho, campistas.
-    </h4></P>
-   
-       <P> <h2 class='titulo'>Valorizando os Pontos Turísticos e a História Local </h2> 
-       <h4> No projeto Itinerário, o vocabulário e os pontos turísticos da cidade de Campos dos Goytacazes foi apresentadas no objetivo de valorizar nossa cidade e a cultura dela. Na aba mapa, você pode verificar vários pontos turísticos marcados com o marcador azul que clicando aparece alguns dos pontos turísticosque temos na nossa cidade além de fotos e descrição de cada uma delas. 
-        clicando na aba 'mapa' aparece o projeto. ou <a href='./mapa.html'> clique aqui </a> seja direcionado para página.   </h4></P>  
-       
-        <P> <h2 class='titulo'>Um Projeto Feito Por Quem Acredita na Educação e na Cultura Local </h2> 
-        <h4>O desenvolvimento deste site é fruto do trabalho dos alunos da turma INF21I, do curso técnico de informática do Instituto Superior de Educação Professor Aldo Muylaert (ISEPAM), sob a orientação da professora Luciana Tavares. O projeto foi idealizado com o objetivo de unir tecnologia, educação e cultura, promovendo não só o aprendizado prático dos alunos, como também a valorização da história, da linguagem e dos patrimônios da nossa cidade.
+      <!-- Seção de Chamada -->
+      <div class="callout-section fade-in">
+        <div class="callout-content">
+          <i class="fas fa-compass"></i>
+          <h2>Junte-se a Nós Nesse Percurso</h2>
+          <p>O Itinerário Campista é mais do que um guia, é uma experiência de pertencimento e orgulho. Navegue, explore, compartilhe e, acima de tudo, valorize a cultura local. Porque quem conhece Campos, entende que aqui existe um jeito único de viver, falar e celebrar.</p>
+          <p><strong>Acesse, explore e faça parte dessa viagem pelo coração campista.</strong></p>
+        </div>
+      </div>
 
-Esse é mais um exemplo de como a educação tem um papel fundamental na preservação da memória local e na construção de ferramentas que beneficiam toda a comunidade.
-<p>
-Nosso objetivo é claro: fazer com que cada visitante, seja ele campista ou não, conheça, valorize e se apaixone pela nossa cidade. Ao navegar pelo site, você terá acesso a mapas interativos, informações culturais, curiosidades e, claro, ao nosso querido vocabulário campista. Porque a linguagem também é patrimônio.
+      <!-- Seção de Cards das Personalidades/Locais -->
+      <div class="profile-section">
+        <h2 class="section-title"><i class="fas fa-users"></i> Conheça Nossa História</h2>
+        
+        <div class="profile-grid">
+          <!-- Perfil Luciana -->
+          <div class="profile-card fade-in">
+            <div class="profile-image">
+              <img src="luciana.jpg" alt="Professora Luciana Tavares">
+              <div class="profile-overlay">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+            </div>
+            <div class="profile-info">
+              <h3>Luciana Tavares</h3>
+              <span class="profile-title">Orientadora & Idealizadora</span>
+              <p>A professora de Língua Portuguesa e Literatura atua como orientadora do projeto "Itinerário Vocabular Campista", acompanhando e guiando nossa turma. Foi a partir de sua sensibilidade, dedicação e visão educacional que surgiu a ideia inicial de desenvolver um site que valorizasse a cultura, os costumes, a linguagem típica e os pontos turísticos de Campos dos Goytacazes.</p>
+              <div class="profile-tags">
+                <span><i class="fas fa-book"></i> Literatura</span>
+                <span><i class="fas fa-language"></i> Português</span>
+              </div>
+            </div>
+          </div>
 
-Cada clique é um convite a descobrir que Campos dos Goytacazes vai muito além do que se imagina. É terra de gente trabalhadora, de histórias, de fé, de natureza exuberante e de uma cultura que pulsa viva nas palavras, nas tradições e nos espaços que compõem nosso território.</h4></P>
- <P> <h2 class='titulo'>Junte-se a Nós Nesse Percurso</h2> 
- <h4> O Itinerário Campista é mais do que um guia, é uma experiência de pertencimento e orgulho. Navegue, explore, compartilhe e, acima de tudo, valorize a cultura local. Porque quem conhece Campos, entende que aqui existe um jeito único de viver, falar e celebrar.
+          <!-- Perfil ISEPAM -->
+          <div class="profile-card fade-in delay-1">
+            <div class="profile-image">
+              <img src="https://static.wixstatic.com/media/a095d7_e9983952827a4e71acc5f9ea8b2ffe6f~mv2.jpg/v1/fill/w_640,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a095d7_e9983952827a4e71acc5f9ea8b2ffe6f~mv2.jpg" alt="ISEPAM">
+              <div class="profile-overlay">
+                <i class="fas fa-university"></i>
+              </div>
+            </div>
+            <div class="profile-info">
+              <h3>Instituto Superior de Educação Professor Aldo Muylaert</h3>
+              <span class="profile-title">ISEPAM - 130 anos de história</span>
+              <p>Fundado em 1895, o ISEPAM completa em 2025, 130 anos de dedicação à educação pública de qualidade, sendo referência na formação de profissionais e cidadãos conscientes em Campos dos Goytacazes e em toda a região. Sua história começou como Escola Normal, destinada à formação de professores, e hoje oferece cursos superiores e técnicos de excelência.</p>
+              <div class="profile-tags">
+                <span><i class="fas fa-calendar"></i> 1895-2025</span>
+                <span><i class="fas fa-code"></i> INF21I</span>
+              </div>
+            </div>
+          </div>
 
-Acesse, explore e faça parte dessa viagem pelo coração campista. </h4>      
-  <P> <h2 class='titulo'>Conheça mais sobre nossa orientadora, história de campos e a história do ISEPAM. </h2> </P>      
-  <br>
-  
-  
-  <img src="luciana.jpg"
-  style="width:35%"> 
-  
-    <h3>LUCIANA TAVARES:</h3>
-    <P>A professora de Língua Portuguesa e Literatura, Luciana Tavares, também atua como orientadora do projeto "Itinerário Vocabular Campista", acompanhando e guiando nossa turma desde o ano passado em diversos processos de aprendizagem, especialmente nas áreas de Língua Portuguesa e Literatura.
+          <!-- Perfil Campos -->
+          <div class="profile-card fade-in delay-2">
+            <div class="profile-image">
+              <img src="https://cdn.blablacar.com/wp-content/uploads/br/2024/05/05094938/campos-dos-goytacazes-rj.webp" alt="Campos dos Goytacazes">
+              <div class="profile-overlay">
+                <i class="fas fa-city"></i>
+              </div>
+            </div>
+            <div class="profile-info">
+              <h3>Campos dos Goytacazes</h3>
+              <span class="profile-title">190 anos de emancipação</span>
+              <p>A cidade de Campos dos Goytacazes é um dos maiores municípios do estado do Rio de Janeiro, tanto em extensão territorial quanto em importância histórica, econômica e cultural. Em 2025, Campos celebra seus 190 anos de emancipação, carregando consigo uma trajetória marcada pela força do seu povo, pela riqueza de suas tradições e pela contribuição constante para o desenvolvimento do estado e do país.</p>
+              <div class="profile-tags">
+                <span><i class="fas fa-sugar-cane"></i> Cana-de-açúcar</span>
+                <span><i class="fas fa-oil-can"></i> Petróleo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-Dentro deste projeto, a professora teve um papel absolutamente fundamental, não apenas como orientadora, mas também como idealizadora da proposta. Foi a partir de sua sensibilidade, dedicação e visão educacional que surgiu a ideia inicial de desenvolver um site que valorizasse a cultura, os costumes, a linguagem típica e os pontos turísticos de Campos dos Goytacazes.
+  <footer class="footer-bottom">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4><i class="fas fa-map-marked-alt"></i> Itinerário Campista</h4>
+        <p>Descubra a essência de Campos dos Goytacazes através de sua cultura, história e tradições.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="mapa.html">Mapa</a></li>
+          <li><a href="vocabulario.html">Vocabulário</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p><i class="fas fa-envelope"></i> contato@itinerariocampista.com</p>
+        <p><i class="fas fa-phone"></i> (22) 99999-9999</p>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <p>&copy; 2025 Itinerário Vocabular Campista - Turma INF21I | ISEPAM</p>
+    </div>
+  </footer>
 
-Ao longo de todo o desenvolvimento, a professora Luciana esteve presente em cada etapa, oferecendo suporte, direcionamento, incentivando a pesquisa, a criatividade e a colaboração entre todos. Sob sua orientação, nós, estudantes da turma INF21I do Instituto Superior de Educação Professor Aldo Muylaert (ISEPAM), trabalhamos intensamente, desde o planejamento até a execução, construindo este projeto inteiramente do zero, com o objetivo de não só exaltar a riqueza cultural da nossa cidade, como também prestar uma homenagem especial aos 130 anos de história do nosso instituto de ensino, que tanto contribui para a educação e o desenvolvimento da nossa região. </P>
-   <br><br>
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu nav ul');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
     
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-
-    <img src="https://static.wixstatic.com/media/a095d7_e9983952827a4e71acc5f9ea8b2ffe6f~mv2.jpg/v1/fill/w_640,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a095d7_e9983952827a4e71acc5f9ea8b2ffe6f~mv2.jpg"
-  style="width:35%"> 
-<h3> Instituto Superior de Educação Professor Aldo Muylaert (ISEPAM): </h3>
-<p> O Instituto Superior de Educação Professor Aldo Muylaert, conhecido como ISEPAM, é uma instituição que carrega consigo uma trajetória marcada por tradição, compromisso e transformação social. Fundado em 1895, o ISEPAM completa, neste ano de 2025, 130 anos de dedicação à educação pública de qualidade, sendo referência na formação de profissionais e cidadãos conscientes na cidade de Campos dos Goytacazes e em toda a região. Sua história começou como Escola Normal, destinada à formação de professores para atender às necessidades educacionais de uma sociedade que começava a compreender o valor do ensino formal e da preparação de educadores. Desde então, o ISEPAM se consolidou como uma instituição que não apenas acompanha, mas também promove as mudanças sociais, tecnológicas e pedagógicas, sempre priorizando a formação humana, ética e acadêmica dos seus alunos. Ao longo das décadas, sua estrutura evoluiu, novos cursos foram criados e seu papel social se fortaleceu. Atualmente, o instituto oferece não só formação superior na área da educação, mas também cursos técnicos de excelência , como informática,  sempre buscando alinhar tradição e inovação. O ISEPAM é muito mais do que um espaço de ensino; é um verdadeiro patrimônio histórico e educacional de Campos dos Goytacazes, sendo motivo de orgulho para todos que fazem parte dessa história. Sua missão vai além de ensinar conteúdos: o instituto forma pessoas, incentiva o pensamento crítico, promove a inclusão e prepara seus estudantes para os desafios do presente e do futuro. Ao celebrar seus 130 anos, o ISEPAM reafirma seu compromisso com a educação pública, gratuita e de qualidade, mantendo viva sua essência de transformar vidas através do conhecimento e do desenvolvimento social.</p>
-    <br> <br>
-
-   <img src="https://cdn.blablacar.com/wp-content/uploads/br/2024/05/05094938/campos-dos-goytacazes-rj.webp " style="width:35%"> 
-    <h3> Campos dos Goytacazes:</h3>
-    <p> 
-A cidade de Campos dos Goytacazes é um dos maiores municípios do estado do Rio de Janeiro, tanto em extensão territorial quanto em importância histórica, econômica e cultural. Em 2025, Campos celebra seus 190 anos de emancipação, carregando consigo uma trajetória marcada pela força do seu povo, pela riqueza de suas tradições e pela contribuição constante para o desenvolvimento do estado e do país. Sua história remonta ao período colonial, quando era habitada pelos índios goytacazes e, posteriormente, se tornou uma região de grande relevância econômica, inicialmente pela agricultura, especialmente a cana-de-açúcar, e depois pela exploração de petróleo, que também impulsionou sua economia. Ao longo dos anos, Campos se destacou pela sua diversidade cultural, pela tradição na educação, nas artes e nas manifestações populares que refletem o orgulho e a identidade de seu povo. A cidade abriga patrimônios históricos, igrejas, praças, centros culturais e pontos turísticos que contam sua história e encantam moradores e visitantes. Além disso, Campos dos Goytacazes é reconhecida pela hospitalidade de seu povo e pela força das expressões culturais locais, como o tradicional vocabulário campista, que reflete a maneira única dos campistas se expressarem, mantendo viva uma herança cultural passada de geração em geração. Celebrar os 190 anos de Campos dos Goytacazes é exaltar sua trajetória de lutas, conquistas e transformações, reconhecendo a importância de preservar sua história, valorizar sua cultura e fortalecer cada vez mais o sentimento de pertencimento daqueles que vivem e constroem, diariamente, essa cidade que é, sem dúvida, um dos grandes orgulhos do estado do Rio de Janeiro.</p>
-    </div > 
-
-     
-        </main>
-     <footer class="footer-bottom">
-            &copy; 2025 itinerário vocabular campista.
-        </footer>
+    fadeElements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
 </body>
 </html>
