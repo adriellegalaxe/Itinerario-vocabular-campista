@@ -76,7 +76,16 @@ img { display: block; max-width: 100%; }
 }
 
 .brand-icon {
-  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--dourado);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--dourado);
 }
 
@@ -145,10 +154,8 @@ img { display: block; max-width: 100%; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 60% at 70% 50%, rgba(50,153,204,0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 80% at 10% 80%, rgba(201,162,39,0.10) 0%, transparent 60%),
-    linear-gradient(135deg, #0d0c5e 0%, #1a18a0 60%, #0a3a6b 100%);
+  background: var(--azul-escuro);
+  border-bottom: 1px solid rgba(201,162,39,0.25);
 }
 
 .hero-bg::after {
@@ -324,7 +331,17 @@ img { display: block; max-width: 100%; }
 }
 
 .pillar-icon {
-  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--azul-medio);
+  border-radius: 8px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--azul-medio);
   margin-bottom: 20px;
 }
 
@@ -539,35 +556,472 @@ img { display: block; max-width: 100%; }
 }
 
 /* ======================================================
-   PÁGINAS: VOCABULÁRIO
+   PÁGINAS: VOCABULÁRIO — Acervo lexical
    ====================================================== */
+.acervo-header {
+  background: var(--azul-escuro);
+  padding: calc(var(--nav-h) + 56px) 0 56px;
+}
+
+.acervo-header .section-label { color: var(--dourado); }
+.acervo-header .section-title { color: var(--branco); margin-bottom: 20px; }
+.acervo-header .acervo-sub {
+  color: rgba(255,255,255,0.68);
+  max-width: 620px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.acervo-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.acervo-busca {
+  flex: 1 1 260px;
+  position: relative;
+}
+
+.acervo-busca input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius);
+  padding: 13px 18px;
+  color: var(--branco);
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+}
+
+.acervo-busca input::placeholder { color: rgba(255,255,255,0.45); }
+.acervo-busca input:focus {
+  outline: none;
+  border-color: var(--dourado);
+}
+
+.acervo-filtros {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.75);
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transicao), border-color var(--transicao), color var(--transicao);
+}
+
+.filtro-btn:hover {
+  border-color: rgba(255,255,255,0.55);
+  color: var(--branco);
+}
+
+.filtro-btn.ativo {
+  background: var(--dourado);
+  border-color: var(--dourado);
+  color: var(--azul-escuro);
+  font-weight: 600;
+}
+
+.acervo-count {
+  padding: 20px 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
 .catalogo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 32px 24px;
-  margin-top: calc(var(--nav-h) + 32px);
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+  padding-bottom: 90px;
 }
 
 .item-catalogo {
   background: var(--branco);
-  border: 2px solid var(--borda);
+  border: 1px solid var(--borda);
   border-radius: var(--radius);
-  padding: 24px 20px;
-  text-align: center;
-  color: var(--azul-escuro);
+  overflow: hidden;
+  text-align: left;
+  color: var(--texto);
   cursor: pointer;
   transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
-  font-family: 'Playfair Display', serif;
 }
 
 .item-catalogo:hover {
-  transform: scale(1.03);
+  transform: translateY(-3px);
   box-shadow: var(--sombra-forte);
   border-color: var(--azul-medio);
+}
+
+.item-catalogo-media {
+  aspect-ratio: 4 / 3;
+  background: var(--azul-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.item-catalogo-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-catalogo-monograma {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--azul-medio);
+}
+
+.item-catalogo-body {
+  padding: 20px 22px 24px;
+  border-top: 3px solid var(--azul-medio);
+}
+
+.item-catalogo-num {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--dourado);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.item-catalogo h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 8px;
+}
+
+.item-catalogo p {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.acervo-vazio {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
+/* ======================================================
+   PÁGINA: FICHA DA PALAVRA (verbete individual)
+   ====================================================== */
+.ficha-header {
+  background: var(--azul-escuro);
+  padding: calc(var(--nav-h) + 64px) 0 64px;
+}
+
+.ficha-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.88rem;
+  margin-bottom: 28px;
+  transition: color var(--transicao);
+}
+.ficha-voltar:hover { color: var(--dourado); }
+
+.ficha-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ficha-num {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--dourado);
+  font-weight: 600;
+}
+
+.ficha-badge {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.ficha-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--branco);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.ficha-classe {
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.ficha-corpo {
+  padding: 72px 0;
+  background: var(--branco);
+}
+
+.ficha-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.ficha-media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-forte);
+  aspect-ratio: 1 / 1;
+}
+
+.ficha-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ficha-media-monograma {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  background: var(--azul-claro);
+  border: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--azul-medio);
+}
+
+.ficha-texto p {
+  font-size: 1.08rem;
+  color: var(--texto-suave);
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+
+.ficha-texto p:last-child { margin-bottom: 0; }
+
+.ficha-nav {
+  padding: 40px 0 90px;
+  background: var(--branco);
+  border-top: 1px solid var(--borda);
+}
+
+.ficha-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ficha-nav a {
+  color: var(--azul-medio);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.ficha-nav a:hover { color: var(--azul-vivo); }
+
+/* ======================================================
+   PÁGINA: DESAFIO CAMPISTÊS (jogo)
+   ====================================================== */
+.desafio-header {
+  background: var(--azul-escuro);
+  padding: calc(var(--nav-h) + 64px) 0 56px;
+  text-align: center;
+}
+.desafio-header .section-label { color: var(--dourado); justify-content: center; }
+.desafio-header .section-title { color: var(--branco); margin-bottom: 16px; }
+.desafio-header p {
+  color: rgba(255,255,255,0.68);
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.desafio-area {
+  background: var(--azul-claro);
+  padding: 56px 0 100px;
+  min-height: 480px;
+}
+
+.desafio-painel {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--branco);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sombra-forte);
+  padding: 44px 40px;
+}
+
+.desafio-progresso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.desafio-barra {
+  height: 4px;
+  background: var(--borda);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.desafio-barra-preenchida {
+  height: 100%;
+  background: var(--azul-medio);
+  transition: width 0.3s ease;
+}
+
+.desafio-pergunta-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.desafio-termo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 32px;
+}
+
+.desafio-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.desafio-opcao {
+  text-align: left;
+  background: var(--creme);
+  border: 1.5px solid var(--borda);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.98rem;
+  color: var(--texto);
+  cursor: pointer;
+  transition: border-color var(--transicao), background var(--transicao);
+}
+
+.desafio-opcao:hover:not(:disabled) {
+  border-color: var(--azul-medio);
+}
+
+.desafio-opcao:disabled { cursor: default; }
+
+.desafio-opcao.correta {
+  border-color: #2f7a4f;
+  background: #eaf5ee;
+  color: #1e5636;
+  font-weight: 600;
+}
+
+.desafio-opcao.errada {
+  border-color: #a3372f;
+  background: #fbeceb;
+  color: #7d2820;
+}
+
+.desafio-feedback {
+  min-height: 24px;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  margin-bottom: 20px;
+}
+
+.desafio-continuar {
+  display: inline-block;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  padding: 13px 30px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background var(--transicao);
+}
+.desafio-continuar:hover { background: var(--azul-medio); }
+.desafio-continuar:disabled {
+  background: var(--borda);
+  color: var(--texto-suave);
+  cursor: not-allowed;
+}
+
+.desafio-resultado { text-align: center; }
+
+.desafio-resultado-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--azul-escuro);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.desafio-resultado-total {
+  color: var(--texto-suave);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.desafio-resultado-msg {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--azul-medio);
+  margin-bottom: 36px;
+}
+
+.desafio-botoes {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* ======================================================
@@ -604,6 +1058,15 @@ img { display: block; max-width: 100%; }
   .about-img-wrap::before {
     display: none;
   }
+
+  .ficha-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ficha-media, .ficha-media-monograma {
+    max-width: 260px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -624,19 +1087,22 @@ img { display: block; max-width: 100%; }
 
   .nav-menu nav {
     width: 100%;
+  }
+
+  .nav-menu nav ul {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.35s ease;
   }
 
   .nav-menu nav ul.open {
-    max-height: 200px;
+    max-height: 260px;
   }
 
   .nav-menu nav ul {
     flex-direction: column;
     gap: 0;
-    padding: 8px 0 16px;
+    padding: 0 0 16px;
   }
 
   .nav-menu nav ul li a {
@@ -676,6 +1142,22 @@ img { display: block; max-width: 100%; }
     width: 100%;
     max-width: 320px;
     text-align: center;
+  }
+
+  .desafio-painel {
+    padding: 32px 22px;
+  }
+
+  .desafio-termo {
+    font-size: 1.7rem;
+  }
+
+  .acervo-header, .ficha-header, .desafio-header {
+    padding-top: calc(var(--nav-h) + 36px);
+  }
+
+  .ficha-title {
+    font-size: 2.4rem;
   }
 }
 
