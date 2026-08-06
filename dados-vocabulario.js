@@ -46,7 +46,7 @@ const VOCABULARIO = [
   },
   {
     id: "caiau",
-    numero: "003",
+    numero: "007",
     termo: "Caiau",
     categoria: "Expressão",
     classe: "interjeição",
@@ -97,7 +97,7 @@ const VOCABULARIO = [
   
   {
     id: "chuvisco",
-    numero: "007",
+    numero: "003",
     termo: "Chuvisco",
     categoria: "Palavra",
     classe: "substantivo",
