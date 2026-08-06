@@ -51,7 +51,6 @@ const VOCABULARIO = [
     categoria: "Expressão",
     classe: "interjeição",
     resumo: "Interjeição espontânea de espanto ou surpresa.",
-    imagem: "caiau.png",
     texto: [
       "“Caiau!” é uma interjeição popular usada para expressar surpresa, susto ou admiração. Comum na fala informal, ela surge como um grito instintivo — aquele tipo de palavra que o corpo solta antes mesmo da mente pensar.",
       "Sua origem está ligada ao adjetivo “caiaudo” (alguém ousado, corajoso), mas com o tempo a expressão se desvinculou do sentido original e passou a funcionar isoladamente, como reação emocional — fruto da oralidade e do ritmo da fala cotidiana.",
@@ -65,7 +64,6 @@ const VOCABULARIO = [
     categoria: "Palavra",
     classe: "verbo",
     resumo: "O verbo-coringa: fazer algo que o contexto já explica.",
-    imagem: "coisar.png",
     texto: [
       "“Coisar” é um verdadeiro camaleão da língua campista: é o verbo que se usa quando a memória falha, quando não se quer ser específico ou quando o contexto já diz tudo. Em essência, “coisar” significa fazer algo — e esse “algo” fica subentendido na situação.",
       "É comum ouvir frases como “você precisa coisar esse documento no cartório” (autenticar, registrar) ou “a gente vai coisar a carne para o churrasco” (preparar, temperar). O verbo funciona como um atalho verbal para qualquer ação que a pessoa não consiga — ou não precise — nomear com exatidão.",
@@ -96,42 +94,23 @@ const VOCABULARIO = [
       "A palavra deriva de “carbúnculo”, nome de uma doença que acomete o gado bovino, e que foi apropriada pela fala popular até se transformar num termo de identidade regional. Hoje figura até no nome de páginas dedicadas à memória linguística de Campos, como referência de humor e pertencimento."
     ]
   },
-  {
-    id: "coquinho",
-    numero: "007",
-    termo: "Coquinho",
-    categoria: "Palavra",
-    classe: "substantivo",
-    resumo: "Amendoim salgadinho, item clássico de boteco e festa.",
-    texto: [
-      "Em Campos, “coquinho” é o nome popular dado ao amendoim salgadinho — aquele servido em petiscos, festas e mesas de boteco. O termo é um bom exemplo de como o vocabulário local renomeia objetos do cotidiano com um apelido próprio, transmitido de geração em geração."
-    ]
-  },
+  
   {
     id: "chuvisco",
-    numero: "008",
+    numero: "007",
     termo: "Chuvisco",
     categoria: "Palavra",
     classe: "substantivo",
     resumo: "Doce típico da região, feito à base de ovos e açúcar.",
+    imagem: "chuvisco.png",
     texto: [
       "“Chuvisco” é o nome de um doce tradicional campista, preparado à base de ovos e açúcar. O termo é um dos muitos registros gastronômicos do campistês — vocabulário que não descreve apenas modos de falar, mas também sabores e receitas que fazem parte da identidade da cidade."
     ]
   },
-  {
-    id: "comandita",
-    numero: "009",
-    termo: "Comandita",
-    categoria: "Palavra",
-    classe: "substantivo coletivo",
-    resumo: "Um grupo de pessoas, sem especificar quem são.",
-    texto: [
-      "“Comandita” é o coletivo campista para se referir a um grupo de pessoas sem necessidade de especificá-las — “a comandita chegou da festa com fome”. Assim como “coisar” e “bichinha”, é mais um exemplo de como o dialeto local resolve a fala cotidiana com termos genéricos e afetivos, em vez de descrições exatas."
-    ]
-  },
+
   {
     id: "lambdacismo-campista",
-    numero: "010",
+    numero: "008",
     termo: "Lambdacismo Campista",
     categoria: "Fenômeno linguístico",
     classe: "fenômeno fonético",
