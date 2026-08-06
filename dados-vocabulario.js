@@ -107,8 +107,7 @@ const VOCABULARIO = [
       "Hoje, “Caiau!” pode ser comparada a interjeições como “Caramba!” ou “Eita!”, carregada de regionalismo e identidade. É uma palavra curta e viva, que revela num único som um mundo de sensações — nascida não dos livros, mas do calor da convivência campista."
     ]
   },
-  
-  {
+   {
     id: "lambdacismo-campista",
     numero: "008",
     termo: "Lambdacismo Campista",
@@ -120,4 +119,15 @@ const VOCABULARIO = [
       "Esse fenômeno é conhecido por pesquisadores do dialeto local como parte de um conjunto mais amplo de marcas fonéticas da Baixada Campista, ao lado da tendência de suprimir o “s” do plural na fala corrida. Mais do que um “erro”, trata-se de um traço identitário — a marca sonora de um jeito próprio de falar."
     ]
   }
-];
+],
+  
+  {
+    id: "simininoesiminina",
+    numero: "009",
+    termo: "{Siminino / Siminina}",
+    categoria: "Palavra",
+    classe: "substantivo",
+    resumo: "Modo de chamar uma pessoa (geralmente jovem ou criança) ou alguém cujo nome a gente esqueceu.",
+    texto: [
+      " Forma rápida de chamar alguém, unindo "esse" e "menino", frequentemente usada para conhecidos."
+    ];
