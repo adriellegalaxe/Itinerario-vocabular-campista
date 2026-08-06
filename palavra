@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="tituloPagina">Verbete — Itinerário Campista</title>
+  <link rel="stylesheet" href="css.css" />
+  <link rel="icon" type="image/png" href="icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="nav-menu">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-icon">IC</span>
+      <span class="brand-text">Itinerário Campista</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="vocabulario.html" class="active">Vocabulário</a></li>
+        <li><a href="desafio.html">Desafio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="ficha-header">
+    <div class="container">
+      <a href="vocabulario.html" class="ficha-voltar">&larr; Voltar ao acervo</a>
+      <div class="ficha-meta">
+        <span class="ficha-num" id="fichaNum"></span>
+        <span class="ficha-badge" id="fichaCategoria"></span>
+      </div>
+      <h1 class="ficha-title" id="fichaTermo">—</h1>
+      <p class="ficha-classe" id="fichaClasse"></p>
+    </div>
+  </section>
+
+  <section class="ficha-corpo">
+    <div class="container">
+      <div class="ficha-grid">
+        <div id="fichaMedia"></div>
+        <div class="ficha-texto" id="fichaTexto"></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="ficha-nav">
+    <div class="container ficha-nav-inner">
+      <a href="#" id="linkAnterior">&larr; Verbete anterior</a>
+      <a href="#" id="linkProximo">Próximo verbete &rarr;</a>
+    </div>
+  </nav>
+
+  <footer class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Itinerário Vocabular Campista &mdash; Turma INF21I · ISEPAM</p>
+    </div>
+  </footer>
+
+  <script src="dados-vocabulario.js"></script>
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    toggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+    document.querySelectorAll('#navList a').forEach(a => {
+      a.addEventListener('click', () => {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const indice = VOCABULARIO.findIndex(v => v.id === id);
+    const verbete = indice >= 0 ? VOCABULARIO[indice] : null;
+
+    if (!verbete) {
+      document.querySelector('.ficha-corpo .container').innerHTML =
+        '<p style="text-align:center; color:var(--texto-suave);">Verbete não encontrado. <a href="vocabulario.html" style="color:var(--azul-medio); font-weight:600;">Voltar ao acervo</a>.</p>';
+      document.getElementById('fichaTermo').textContent = 'Verbete não encontrado';
+      document.querySelector('.ficha-nav').style.display = 'none';
+    } else {
+      document.getElementById('tituloPagina').textContent = verbete.termo + ' — Itinerário Campista';
+      document.getElementById('fichaNum').textContent = 'Nº ' + verbete.numero;
+      document.getElementById('fichaCategoria').textContent = verbete.categoria;
+      document.getElementById('fichaTermo').textContent = verbete.termo;
+      document.getElementById('fichaClasse').textContent = verbete.classe;
+
+      const media = document.getElementById('fichaMedia');
+      if (verbete.imagem) {
+        media.innerHTML = `<div class="ficha-media"><img src="${verbete.imagem}" alt="${verbete.termo}"></div>`;
+      } else {
+        media.innerHTML = `<div class="ficha-media-monograma">${verbete.termo.charAt(0)}</div>`;
+      }
+
+      const texto = document.getElementById('fichaTexto');
+      texto.innerHTML = verbete.texto.map(p => `<p>${p}</p>`).join('');
+
+      const anterior = VOCABULARIO[(indice - 1 + VOCABULARIO.length) % VOCABULARIO.length];
+      const proximo = VOCABULARIO[(indice + 1) % VOCABULARIO.length];
+      const linkAnterior = document.getElementById('linkAnterior');
+      const linkProximo = document.getElementById('linkProximo');
+      linkAnterior.href = 'palavra.html?id=' + anterior.id;
+      linkAnterior.textContent = '← ' + anterior.termo;
+      linkProximo.href = 'palavra.html?id=' + proximo.id;
+      linkProximo.textContent = proximo.termo + ' →';
+    }
+  </script>
+
+</body>
+</html>
