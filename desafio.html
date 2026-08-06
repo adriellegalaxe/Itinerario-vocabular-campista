@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Campistês — Itinerário Campista</title>
+  <link rel="stylesheet" href="css.css" />
+  <link rel="icon" type="image/png" href="icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="nav-menu">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-icon">IC</span>
+      <span class="brand-text">Itinerário Campista</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="vocabulario.html">Vocabulário</a></li>
+        <li><a href="desafio.html" class="active">Desafio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="desafio-header">
+    <div class="container">
+      <div class="section-label">Teste seus conhecimentos</div>
+      <h2 class="section-title">Desafio Campistês</h2>
+      <p>Quanto do vocabulário campista você reconhece? A cada rodada, o Desafio sorteia termos do acervo e embaralha as definições. Acerte o máximo possível.</p>
+    </div>
+  </section>
+
+  <section class="desafio-area">
+    <div class="container">
+      <div class="desafio-painel" id="painel"></div>
+    </div>
+  </section>
+
+  <footer class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Itinerário Vocabular Campista &mdash; Turma INF21I · ISEPAM</p>
+    </div>
+  </footer>
+
+  <script src="dados-vocabulario.js"></script>
+  <script src="desafio.js"></script>
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    toggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+    document.querySelectorAll('#navList a').forEach(a => {
+      a.addEventListener('click', () => {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
