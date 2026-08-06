@@ -44,19 +44,19 @@ const VOCABULARIO = [
       "Desse contato teriam surgido fenômenos como a troca de “cl” por “cr” e de “tr” por “dr”, além da adição de sílabas em certas palavras — o que ajuda a explicar pronúncias como “bicicreta” no lugar de “bicicleta”. Apesar de estar em desuso nas áreas urbanas, a palavra resiste em comunidades com menor influência da mídia, funcionando como símbolo da fala popular e da história linguística regional."
     ]
   },
-  {
-    id: "caiau",
-    numero: "007",
-    termo: "Caiau",
-    categoria: "Expressão",
-    classe: "interjeição",
-    resumo: "Interjeição espontânea de espanto ou surpresa.",
+ {
+    id: "chuvisco",
+    numero: "003",
+    termo: "Chuvisco",
+    categoria: "Palavra",
+    classe: "substantivo",
+    resumo: "Doce típico da região, feito à base de ovos e açúcar.",
+    imagem: "chuvisco.png",
     texto: [
-      "“Caiau!” é uma interjeição popular usada para expressar surpresa, susto ou admiração. Comum na fala informal, ela surge como um grito instintivo — aquele tipo de palavra que o corpo solta antes mesmo da mente pensar.",
-      "Sua origem está ligada ao adjetivo “caiaudo” (alguém ousado, corajoso), mas com o tempo a expressão se desvinculou do sentido original e passou a funcionar isoladamente, como reação emocional — fruto da oralidade e do ritmo da fala cotidiana.",
-      "Hoje, “Caiau!” pode ser comparada a interjeições como “Caramba!” ou “Eita!”, carregada de regionalismo e identidade. É uma palavra curta e viva, que revela num único som um mundo de sensações — nascida não dos livros, mas do calor da convivência campista."
+      "“Chuvisco” é o nome de um doce tradicional campista, preparado à base de ovos e açúcar. O termo é um dos muitos registros gastronômicos do campistês — vocabulário que não descreve apenas modos de falar, mas também sabores e receitas que fazem parte da identidade da cidade."
     ]
   },
+
   {
     id: "coisar",
     numero: "004",
@@ -94,20 +94,20 @@ const VOCABULARIO = [
       "A palavra deriva de “carbúnculo”, nome de uma doença que acomete o gado bovino, e que foi apropriada pela fala popular até se transformar num termo de identidade regional. Hoje figura até no nome de páginas dedicadas à memória linguística de Campos, como referência de humor e pertencimento."
     ]
   },
-  
-  {
-    id: "chuvisco",
-    numero: "003",
-    termo: "Chuvisco",
-    categoria: "Palavra",
-    classe: "substantivo",
-    resumo: "Doce típico da região, feito à base de ovos e açúcar.",
-    imagem: "chuvisco.png",
+   {
+    id: "caiau",
+    numero: "007",
+    termo: "Caiau",
+    categoria: "Expressão",
+    classe: "interjeição",
+    resumo: "Interjeição espontânea de espanto ou surpresa.",
     texto: [
-      "“Chuvisco” é o nome de um doce tradicional campista, preparado à base de ovos e açúcar. O termo é um dos muitos registros gastronômicos do campistês — vocabulário que não descreve apenas modos de falar, mas também sabores e receitas que fazem parte da identidade da cidade."
+      "“Caiau!” é uma interjeição popular usada para expressar surpresa, susto ou admiração. Comum na fala informal, ela surge como um grito instintivo — aquele tipo de palavra que o corpo solta antes mesmo da mente pensar.",
+      "Sua origem está ligada ao adjetivo “caiaudo” (alguém ousado, corajoso), mas com o tempo a expressão se desvinculou do sentido original e passou a funcionar isoladamente, como reação emocional — fruto da oralidade e do ritmo da fala cotidiana.",
+      "Hoje, “Caiau!” pode ser comparada a interjeições como “Caramba!” ou “Eita!”, carregada de regionalismo e identidade. É uma palavra curta e viva, que revela num único som um mundo de sensações — nascida não dos livros, mas do calor da convivência campista."
     ]
   },
-
+  
   {
     id: "lambdacismo-campista",
     numero: "008",
