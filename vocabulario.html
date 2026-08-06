@@ -1,76 +1,142 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
-  <link rel="stylesheet" href="css.css">
+  <title>Vocabulário — Itinerário Campista</title>
+  <link rel="stylesheet" href="css.css" />
   <link rel="icon" type="image/png" href="icone.png">
-  <style>
-    body{
-        background-color: rgb(3, 183, 228) ;
-    }
-    h1,h2{
-        color: #14128d;
-    }
-    .individual{
-      color:white;}
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-   <header class="nav-menu">
-            <h1 style="color: white; text-decoration: none;">Vocabulário</a></h1>
-            <nav>
-                <ul class="lista"> 
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="vocabulario.html">Vocabulário</a></li>
-                  
-                </ul>
-            </nav>
-        </header>
-<br><br>
-<br>
-<br>
-  <h1 class='individual'><center>Clique e veja seus significados!</center></h1>
-  <br><br>
-        <div class='caixa-texto'>
-            <a href="baleba.html">
-  <img src="ChatGPT Image 22 de mai. de 2025, 10_11_07.png" alt="Baleba"style="width:40%;display: block; margin: 0 auto;">
-</a>
+
+  <header class="nav-menu">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-icon">IC</span>
+      <span class="brand-text">Itinerário Campista</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="vocabulario.html" class="active">Vocabulário</a></li>
+        <li><a href="desafio.html">Desafio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="acervo-header">
+    <div class="container">
+      <div class="section-label">Acervo Lexical</div>
+      <h2 class="section-title">O vocabulário campista,<br>catalogado como patrimônio</h2>
+      <p class="acervo-sub">Cada palavra, expressão ou fenômeno de fala reunido aqui é um registro do jeito campista de se expressar — pesquisado, documentado e preservado como parte da memória de Campos dos Goytacazes.</p>
+
+      <div class="acervo-toolbar">
+        <div class="acervo-busca">
+          <input type="text" id="campoBusca" placeholder="Buscar por palavra ou significado…" autocomplete="off">
         </div>
+        <div class="acervo-filtros" id="filtros"></div>
+      </div>
+    </div>
+  </section>
 
- <div class='caixa-texto'>
-            <a href="bicicreta.html">
-  <img src="ChatGPT Image 22 de mai. de 2025, 22_11_14.png" alt="Bicicreta"style="width:40%;display: block; margin: 0 auto;">
-</a>
- </div>
- <div class='caixa-texto'>
-            <a href="caiau.html">
-  <img src="ChatGPT Image 22 de mai. de 2025, 22_08_57.png" alt="Caiau" style="width:40%;display: block; margin: 0 auto;">
-  </a> 
- </div>
+  <main>
+    <div class="container">
+      <p class="acervo-count" id="contador"></p>
+      <div class="catalogo" id="catalogo"></div>
+    </div>
+  </main>
 
+  <footer class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Itinerário Vocabular Campista &mdash; Turma INF21I · ISEPAM</p>
+    </div>
+  </footer>
 
-<div class='caixa-texto'>
-            <a href="coisar.html">
-  <img src="ChatGPT Image 22 de mai. de 2025, 22_04_02.png" alt="Coisar
-  " style="width:40%;display: block; margin: 0 auto;">
-</a>
-</div>
-<br>
+  <script src="dados-vocabulario.js"></script>
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    toggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+    document.querySelectorAll('#navList a').forEach(a => {
+      a.addEventListener('click', () => {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
 
+    const catalogo = document.getElementById('catalogo');
+    const contador = document.getElementById('contador');
+    const campoBusca = document.getElementById('campoBusca');
+    const filtrosEl = document.getElementById('filtros');
 
+    const categorias = ['Todos', ...new Set(VOCABULARIO.map(v => v.categoria))];
+    let categoriaAtiva = 'Todos';
 
+    categorias.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'filtro-btn' + (cat === 'Todos' ? ' ativo' : '');
+      btn.textContent = cat;
+      btn.addEventListener('click', () => {
+        categoriaAtiva = cat;
+        document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+        renderizar();
+      });
+      filtrosEl.appendChild(btn);
+    });
 
+    function renderizar() {
+      const termoBusca = campoBusca.value.trim().toLowerCase();
 
+      const filtrados = VOCABULARIO.filter(v => {
+        const passaCategoria = categoriaAtiva === 'Todos' || v.categoria === categoriaAtiva;
+        const passaBusca = !termoBusca ||
+          v.termo.toLowerCase().includes(termoBusca) ||
+          v.resumo.toLowerCase().includes(termoBusca);
+        return passaCategoria && passaBusca;
+      });
 
+      contador.textContent = filtrados.length + (filtrados.length === 1 ? ' verbete catalogado' : ' verbetes catalogados');
 
+      catalogo.innerHTML = '';
 
+      if (filtrados.length === 0) {
+        catalogo.innerHTML = '<p class="acervo-vazio">Nenhum verbete encontrado para essa busca.</p>';
+        return;
+      }
 
+      filtrados.forEach(v => {
+        const card = document.createElement('a');
+        card.href = 'palavra.html?id=' + encodeURIComponent(v.id);
+        card.className = 'item-catalogo';
 
-        <footer class="footer-bottom">
-            <p>&copy; 2025 itinerario campista.</p>
-        </footer>
+        const media = v.imagem
+          ? `<div class="item-catalogo-media"><img src="${v.imagem}" alt="${v.termo}"></div>`
+          : `<div class="item-catalogo-media"><span class="item-catalogo-monograma">${v.termo.charAt(0)}</span></div>`;
+
+        card.innerHTML = `
+          ${media}
+          <div class="item-catalogo-body">
+            <span class="item-catalogo-num">Nº ${v.numero} · ${v.categoria}</span>
+            <h3>${v.termo}</h3>
+            <p>${v.resumo}</p>
+          </div>
+        `;
+        catalogo.appendChild(card);
+      });
+    }
+
+    campoBusca.addEventListener('input', renderizar);
+    renderizar();
+  </script>
+
 </body>
 </html>
